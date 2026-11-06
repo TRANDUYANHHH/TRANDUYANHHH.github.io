@@ -1,4 +1,3 @@
-"""Local preview. Run build.py first; Ctrl+C stops the server."""
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 from functools import partial
