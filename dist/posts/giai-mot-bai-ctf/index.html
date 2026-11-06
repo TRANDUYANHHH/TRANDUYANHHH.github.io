@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Một writeup nhỏ: nhận ra chuỗi Base64 · Ghi chép</title><meta name="description" content="Bài tập CTF giả lập để minh họa cách ghi lại quan sát, kiểm chứng và lời giải.">
+<meta name="theme-color" content="#111312"><meta property="og:locale" content="vi_VN"><meta property="og:type" content="article">
+<meta property="og:title" content="Một writeup nhỏ: nhận ra chuỗi Base64"><meta property="og:description" content="Bài tập CTF giả lập để minh họa cách ghi lại quan sát, kiểm chứng và lời giải."><meta property="og:site_name" content="Ghi chép">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><link rel="preload" href="/assets/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/main.js" defer></script></head><body><a class="skip-link" href="#main">Đến nội dung</a>
+    <header class="site-header">
+      <div class="brand"><a href="/" aria-label="Ghi chép — Trang chủ"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>Ghi chép<span class="brand-dot">.</span></span></a>
+      <p>Học. Thử. Ghi lại.</p></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span>☰</span></button>
+      <nav id="site-nav" aria-label="Điều hướng chính"><a href="/" aria-current="page">Bài viết<span class="nav-count">04</span></a><a href="/archive/">Lưu trữ</a><a href="/about/">Giới thiệu</a></nav>
+      <div class="header-social"></div>
+    </header>
+<main id="main" tabindex="-1"><div class="topline"><a class="back-link" href="/">← Tất cả bài viết</a><span>BLOG & WRITEUP</span></div>
+    <article class="article"><header class="article-header"><a class="category" href="/categories/writeup/">Writeup</a><h1>Một writeup nhỏ: nhận ra chuỗi Base64</h1><p class="article-description">Bài tập CTF giả lập để minh họa cách ghi lại quan sát, kiểm chứng và lời giải.</p><div class="article-meta"><span>Người viết</span><span>·</span><time datetime="2026-11-06">06.11.2026</time><span>·</span><span>2 phút đọc</span></div></header>
+    <img class="article-cover" src="/assets/cover-1.svg" width="800" height="500" alt="">
+    <div class="article-layout"><div class="prose"><p>Đây là một bài tập giả lập, chạy hoàn toàn trên máy cá nhân. Mục tiêu là giải một thông điệp được cung cấp sẵn và trình bày cách suy luận sao cho người khác có thể làm lại.</p>
+<h2 id="de-bai">Đề bài</h2>
+<p>Một tờ ghi chú chứa chuỗi sau:</p>
+<div class="codehilite"><pre><span></span><code>ZmxhZ3tyZWFkX3RoZV9jbHVlfQ==
+</code></pre></div>
+
+<p>Gợi ý duy nhất: “Đổi cách biểu diễn, thông điệp sẽ hiện ra.”</p>
+<h2 id="quan-sat-truoc-khi-thu">Quan sát trước khi thử</h2>
+<p>Chuỗi chỉ có chữ cái, chữ số và dấu <code>=</code> ở cuối. Đây là một dấu hiệu thường gặp của Base64. Tuy vậy, nhìn giống chưa đủ để kết luận; bước tiếp theo cần kiểm chứng bằng một bộ giải mã.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Quan sát</th>
+<th>Giả thuyết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bảng ký tự khá hẹp</td>
+<td>Có thể là dữ liệu được mã hóa biểu diễn</td>
+</tr>
+<tr>
+<td>Kết thúc bằng <code>==</code></td>
+<td>Có thể có phần đệm Base64</td>
+</tr>
+<tr>
+<td>Gợi ý nói đến biểu diễn</td>
+<td>Nên thử giải mã trước khi nghĩ đến mật mã</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="kiem-chung-bang-python">Kiểm chứng bằng Python</h2>
+<p>Thư viện chuẩn của Python đã có <code>base64</code>, nên bài tập này không cần cài thêm gói:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+
+<span class="n">encoded</span> <span class="o">=</span> <span class="s2">&quot;ZmxhZ3tyZWFkX3RoZV9jbHVlfQ==&quot;</span>
+<span class="n">decoded</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">encoded</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decoded</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Kết quả:</p>
+<div class="codehilite"><pre><span></span><code>flag{read_the_clue}
+</code></pre></div>
+
+<p>Tham số <code>validate=True</code> giúp từ chối ký tự không hợp lệ. Sau đó, dữ liệu byte được chuyển thành chuỗi UTF-8 để đọc. Nếu dữ liệu không phải văn bản UTF-8, bước chuyển đổi có thể báo lỗi; khi ấy cần kiểm tra dữ liệu thay vì đoán tiếp.</p>
+<h2 id="dieu-rut-ra">Điều rút ra</h2>
+<ul>
+<li>Ghi rõ dữ liệu đầu vào để lời giải có thể tái hiện.</li>
+<li>Tách quan sát khỏi kết luận; luôn kiểm chứng giả thuyết.</li>
+<li>Chỉ giữ những thử nghiệm giúp giải thích lời giải.</li>
+</ul>
+<blockquote>
+<p>Base64 là cách biểu diễn dữ liệu, không phải cơ chế bảo mật. Ai có chuỗi này đều có thể giải mã.</p>
+</blockquote>
+<p>Với một writeup lớn hơn, có thể bổ sung các hướng thử chưa thành công và lý do đổi hướng. Điều quan trọng là người đọc hiểu được quyết định ở mỗi bước, thay vì chỉ nhìn thấy một lệnh và một đáp án.</p>
+<p><em>Đề bài và flag trong bài đều là dữ liệu mẫu do website cung cấp.</em></p><div class="article-tags"><a href="/tags/ctf/">#CTF</a><a href="/tags/python/">#Python</a><a href="/tags/base64/">#Base64</a></div><div class="article-actions"><button type="button" data-copy-link hidden>Sao chép liên kết ↗</button><span class="copy-status" role="status"></span></div></div><aside class="article-aside"><details class="toc" open><summary>Trong bài viết này</summary><div class="toc">
+<ul>
+<li><a href="#de-bai">Đề bài</a></li>
+<li><a href="#quan-sat-truoc-khi-thu">Quan sát trước khi thử</a></li>
+<li><a href="#kiem-chung-bang-python">Kiểm chứng bằng Python</a></li>
+<li><a href="#dieu-rut-ra">Điều rút ra</a></li>
+</ul>
+</div>
+</details></aside></div><a class="next-post" href="/posts/ghi-chep-hoc-tap/"><span>ĐỌC TIẾP</span><strong>Ghi chép để lần sau không bắt đầu lại</strong><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article><footer class="footer"><a class="footer-brand" href="/">Ghi chép<span class="accent">.</span></a><div class="footer-bottom"><span>© 2026 · Học. Thử. Ghi lại.</span><span>Cảm hứng từ <a href="https://andersnoren.se/teman/norrsken-wordpress-theme/" target="_blank" rel="noopener noreferrer">Norrsken ↗</a></span><a href="#main">Lên đầu trang ↑</a></div></footer></main>
+<div class="toast" role="status" aria-live="polite"></div></body></html>

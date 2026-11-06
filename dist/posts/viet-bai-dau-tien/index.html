@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viết bài đầu tiên, bắt đầu từ điều nhỏ nhất · Ghi chép</title><meta name="description" content="Một cấu trúc đơn giản để biến ghi chú rời rạc thành bài blog hoặc writeup dễ đọc.">
+<meta name="theme-color" content="#111312"><meta property="og:locale" content="vi_VN"><meta property="og:type" content="article">
+<meta property="og:title" content="Viết bài đầu tiên, bắt đầu từ điều nhỏ nhất"><meta property="og:description" content="Một cấu trúc đơn giản để biến ghi chú rời rạc thành bài blog hoặc writeup dễ đọc."><meta property="og:site_name" content="Ghi chép">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><link rel="preload" href="/assets/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/main.js" defer></script></head><body><a class="skip-link" href="#main">Đến nội dung</a>
+    <header class="site-header">
+      <div class="brand"><a href="/" aria-label="Ghi chép — Trang chủ"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>Ghi chép<span class="brand-dot">.</span></span></a>
+      <p>Học. Thử. Ghi lại.</p></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span>☰</span></button>
+      <nav id="site-nav" aria-label="Điều hướng chính"><a href="/" aria-current="page">Bài viết<span class="nav-count">04</span></a><a href="/archive/">Lưu trữ</a><a href="/about/">Giới thiệu</a></nav>
+      <div class="header-social"></div>
+    </header>
+<main id="main" tabindex="-1"><div class="topline"><a class="back-link" href="/">← Tất cả bài viết</a><span>BLOG & WRITEUP</span></div>
+    <article class="article"><header class="article-header"><a class="category" href="/categories/blog/">Blog</a><h1>Viết bài đầu tiên, bắt đầu từ điều nhỏ nhất</h1><p class="article-description">Một cấu trúc đơn giản để biến ghi chú rời rạc thành bài blog hoặc writeup dễ đọc.</p><div class="article-meta"><span>Người viết</span><span>·</span><time datetime="2026-11-07">07.11.2026</time><span>·</span><span>2 phút đọc</span></div></header>
+    <img class="article-cover" src="/assets/cover-0.svg" width="800" height="500" alt="">
+    <div class="article-layout"><div class="prose"><p>Một bài viết hữu ích không nhất thiết phải bắt đầu bằng một ý tưởng lớn. Đôi khi, nó chỉ cần trả lời một câu hỏi vừa gặp, giải thích một lỗi mất khá lâu để tìm ra, hoặc lưu lại cách làm để lần sau không phải tìm kiếm từ đầu.</p>
+<h2 id="bat-dau-bang-mot-cau-hoi">Bắt đầu bằng một câu hỏi</h2>
+<p>Trước khi viết, thử hoàn thành câu này: “Sau khi đọc, người đọc có thể…”. Nếu câu trả lời còn quá rộng, hãy thu nhỏ chủ đề. “Hiểu Git” khó viết hơn nhiều so với “Biết cách khôi phục một file vừa sửa nhầm”.</p>
+<p>Một cấu trúc ngắn thường đã đủ:</p>
+<ol>
+<li>Bối cảnh: đang làm gì và gặp vấn đề nào?</li>
+<li>Cách tiếp cận: đã kiểm tra hoặc thử những gì?</li>
+<li>Lời giải: bước nào thực sự giải quyết vấn đề?</li>
+<li>Ghi nhớ: điều gì có thể dùng lại lần sau?</li>
+</ol>
+<h2 id="dung-markdown-de-giu-nhip-viet">Dùng Markdown để giữ nhịp viết</h2>
+<p>Markdown cho phép tập trung vào nội dung mà vẫn trình bày rõ tiêu đề, liên kết, danh sách và đoạn mã. Ví dụ:</p>
+<div class="codehilite"><pre><span></span><code><span class="gu">## Điều vừa học</span>
+
+Đây là một ý <span class="gs">**quan trọng**</span> và một từ <span class="ge">*cần nhấn mạnh*</span>.
+
+<span class="k">-</span><span class="w"> </span>Một quan sát
+<span class="k">-</span><span class="w"> </span>Một điều cần kiểm tra thêm
+</code></pre></div>
+
+<p>Khi đưa code vào bài, ghi tên ngôn ngữ sau dấu mở khối. Đừng chỉ đưa ra kết quả; hãy giải thích đầu vào, cách chạy và điều cần chú ý.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Xin chào, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;người đọc&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<blockquote>
+<p>Viết cho người đọc, nhưng cũng viết cho chính mình của vài tháng sau.</p>
+</blockquote>
+<h2 id="chinh-mot-luot-truoc-khi-dang">Chỉnh một lượt trước khi đăng</h2>
+<p>Đọc lại phần mở đầu và bỏ những câu chưa giúp người đọc hiểu vấn đề. Kiểm tra xem mỗi tiêu đề có mô tả đúng phần bên dưới hay không. Nếu một đoạn quá dài, tách nó theo từng ý.</p>
+<p>Cuối cùng, đặt một tiêu đề cụ thể và viết mô tả ngắn. Một bài nhỏ, rõ ràng và được đăng hôm nay thường hữu ích hơn một bản nháp hoàn hảo vẫn nằm trong thư mục.</p>
+<p><em>Bài mẫu để bạn thử giao diện; hãy sửa hoặc thay bằng câu chuyện của mình.</em></p><div class="article-tags"><a href="/tags/markdown/">#Markdown</a><a href="/tags/viet-lach/">#Viết lách</a></div><div class="article-actions"><button type="button" data-copy-link hidden>Sao chép liên kết ↗</button><span class="copy-status" role="status"></span></div></div><aside class="article-aside"><details class="toc" open><summary>Trong bài viết này</summary><div class="toc">
+<ul>
+<li><a href="#bat-dau-bang-mot-cau-hoi">Bắt đầu bằng một câu hỏi</a></li>
+<li><a href="#dung-markdown-de-giu-nhip-viet">Dùng Markdown để giữ nhịp viết</a></li>
+<li><a href="#chinh-mot-luot-truoc-khi-dang">Chỉnh một lượt trước khi đăng</a></li>
+</ul>
+</div>
+</details></aside></div><a class="next-post" href="/posts/giai-mot-bai-ctf/"><span>ĐỌC TIẾP</span><strong>Một writeup nhỏ: nhận ra chuỗi Base64</strong><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article><footer class="footer"><a class="footer-brand" href="/">Ghi chép<span class="accent">.</span></a><div class="footer-bottom"><span>© 2026 · Học. Thử. Ghi lại.</span><span>Cảm hứng từ <a href="https://andersnoren.se/teman/norrsken-wordpress-theme/" target="_blank" rel="noopener noreferrer">Norrsken ↗</a></span><a href="#main">Lên đầu trang ↑</a></div></footer></main>
+<div class="toast" role="status" aria-live="polite"></div></body></html>

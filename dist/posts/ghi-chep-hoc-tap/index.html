@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghi chép để lần sau không bắt đầu lại · Ghi chép</title><meta name="description" content="Một cách lưu kiến thức kỹ thuật ngắn gọn, có ví dụ và đủ ngữ cảnh để tìm lại.">
+<meta name="theme-color" content="#111312"><meta property="og:locale" content="vi_VN"><meta property="og:type" content="article">
+<meta property="og:title" content="Ghi chép để lần sau không bắt đầu lại"><meta property="og:description" content="Một cách lưu kiến thức kỹ thuật ngắn gọn, có ví dụ và đủ ngữ cảnh để tìm lại."><meta property="og:site_name" content="Ghi chép">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><link rel="preload" href="/assets/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/main.js" defer></script></head><body><a class="skip-link" href="#main">Đến nội dung</a>
+    <header class="site-header">
+      <div class="brand"><a href="/" aria-label="Ghi chép — Trang chủ"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>Ghi chép<span class="brand-dot">.</span></span></a>
+      <p>Học. Thử. Ghi lại.</p></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span>☰</span></button>
+      <nav id="site-nav" aria-label="Điều hướng chính"><a href="/" aria-current="page">Bài viết<span class="nav-count">04</span></a><a href="/archive/">Lưu trữ</a><a href="/about/">Giới thiệu</a></nav>
+      <div class="header-social"></div>
+    </header>
+<main id="main" tabindex="-1"><div class="topline"><a class="back-link" href="/">← Tất cả bài viết</a><span>BLOG & WRITEUP</span></div>
+    <article class="article"><header class="article-header"><a class="category" href="/categories/ghi-chep/">Ghi chép</a><h1>Ghi chép để lần sau không bắt đầu lại</h1><p class="article-description">Một cách lưu kiến thức kỹ thuật ngắn gọn, có ví dụ và đủ ngữ cảnh để tìm lại.</p><div class="article-meta"><span>Người viết</span><span>·</span><time datetime="2026-11-05">05.11.2026</time><span>·</span><span>2 phút đọc</span></div></header>
+    <img class="article-cover" src="/assets/cover-2.svg" width="800" height="500" alt="">
+    <div class="article-layout"><div class="prose"><p>Đọc một hướng dẫn và hiểu ngay lúc đó là một chuyện. Vài tuần sau, khi cần áp dụng lại, nhớ được chi tiết là chuyện khác. Một ghi chú tốt tạo ra cầu nối giữa hai thời điểm ấy.</p>
+<h2 id="luu-ca-cau-hoi-lan-cau-tra-loi">Lưu cả câu hỏi lẫn câu trả lời</h2>
+<p>Thay vì chép nguyên một tài liệu, hãy ghi lại vấn đề đã khiến mình mở tài liệu đó. Câu hỏi cụ thể sẽ giúp việc tìm lại dễ hơn: “Vì sao đường dẫn ảnh bị lỗi khi website nằm trong thư mục con?” có nhiều ngữ cảnh hơn tiêu đề “Đường dẫn”.</p>
+<p>Mỗi ghi chú có thể chỉ cần bốn phần:</p>
+<ul>
+<li><strong>Câu hỏi:</strong> điều chưa hiểu hoặc việc cần làm.</li>
+<li><strong>Giải thích:</strong> viết lại bằng lời của mình.</li>
+<li><strong>Ví dụ:</strong> một trường hợp nhỏ có thể chạy lại.</li>
+<li><strong>Giới hạn:</strong> khi nào cách này không còn đúng?</li>
+</ul>
+<h2 id="chon-vi-du-nho-nhat">Chọn ví dụ nhỏ nhất</h2>
+<p>Một ví dụ ngắn dễ kiểm tra và ít bị nhiễu bởi phần còn lại của dự án. Chẳng hạn, khi học về biến đổi mảng trong JavaScript:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">notes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Git&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;JavaScript&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">note</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`#</span><span class="si">${</span><span class="nx">note</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">labels</span><span class="p">);</span>
+<span class="c1">// [&quot;#Markdown&quot;, &quot;#Git&quot;, &quot;#JavaScript&quot;]</span>
+</code></pre></div>
+
+<p>Ghi thêm một câu: <code>map()</code> tạo mảng mới bằng cách áp dụng hàm lên từng phần tử. Mảng <code>notes</code> không bị thay thế trong ví dụ này. Câu giải thích nhỏ ấy thường hữu ích hơn một đoạn code đứng riêng.</p>
+<h2 id="danh-cho-cho-dieu-chua-biet">Dành chỗ cho điều chưa biết</h2>
+<p>Một ghi chú không cần tỏ ra hoàn chỉnh. Có thể thêm mục “Cần kiểm tra” cho câu hỏi chưa giải quyết được, hoặc ghi rõ phiên bản công cụ đã dùng khi hành vi phụ thuộc vào môi trường.</p>
+<blockquote>
+<p>Ghi chú có thể thay đổi. Khi hiểu thêm, hãy sửa lời giải thích cũ và giữ lại ví dụ tốt hơn.</p>
+</blockquote>
+<p>Trước khi kết thúc một buổi học, dành vài phút viết lại điều quan trọng nhất mà không nhìn tài liệu. Chỗ nào khó diễn đạt thường cũng là chỗ cần tìm hiểu thêm. Sau đó, chọn một ghi chú có ích để phát triển thành bài blog.</p>
+<p>Không phải mọi ghi chú đều cần xuất bản. Nhưng những điều đã được kiểm tra, giải thích rõ và đặt đúng ngữ cảnh sẽ trở thành nền tảng tốt cho một bài chia sẻ.</p>
+<p><em>Đây là bài mẫu. Bạn có thể thay bằng những ghi chú học tập thực tế của mình.</em></p><div class="article-tags"><a href="/tags/hoc-tap/">#Học tập</a><a href="/tags/developer/">#Developer</a><a href="/tags/workflow/">#Workflow</a></div><div class="article-actions"><button type="button" data-copy-link hidden>Sao chép liên kết ↗</button><span class="copy-status" role="status"></span></div></div><aside class="article-aside"><details class="toc" open><summary>Trong bài viết này</summary><div class="toc">
+<ul>
+<li><a href="#luu-ca-cau-hoi-lan-cau-tra-loi">Lưu cả câu hỏi lẫn câu trả lời</a></li>
+<li><a href="#chon-vi-du-nho-nhat">Chọn ví dụ nhỏ nhất</a></li>
+<li><a href="#danh-cho-cho-dieu-chua-biet">Dành chỗ cho điều chưa biết</a></li>
+</ul>
+</div>
+</details></aside></div><a class="next-post" href="/posts/bo-cong-cu-nho/"><span>ĐỌC TIẾP</span><strong>Một bộ công cụ nhỏ cho việc viết đều hơn</strong><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article><footer class="footer"><a class="footer-brand" href="/">Ghi chép<span class="accent">.</span></a><div class="footer-bottom"><span>© 2026 · Học. Thử. Ghi lại.</span><span>Cảm hứng từ <a href="https://andersnoren.se/teman/norrsken-wordpress-theme/" target="_blank" rel="noopener noreferrer">Norrsken ↗</a></span><a href="#main">Lên đầu trang ↑</a></div></footer></main>
+<div class="toast" role="status" aria-live="polite"></div></body></html>
